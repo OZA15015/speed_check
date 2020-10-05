@@ -10,7 +10,7 @@ import sys
 import time
 import torch.backends.cudnn as cudnn
 
-sys.path.append('/home/oza/pre-experiment/speeding/test_dist/mobilenet')
+sys.path.append('/home/oza/pre-experiment/speeding/speed_check/mobilenet')
 from models import *
 from collections import OrderedDict
 from torchsummary import summary
