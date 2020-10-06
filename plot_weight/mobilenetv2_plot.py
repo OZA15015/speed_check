@@ -12,7 +12,7 @@ import torch.backends.cudnn as cudnn
 import matplotlib.pyplot as plt
 import statistics
 
-sys.path.append('/home/oza/pre-experiment/speeding/test_dist/mobilenet')
+sys.path.append('/home/oza/pre-experiment/speeding/speed_check/mobilenet')
 from models import *
 from collections import OrderedDict
 from torchsummary import summary
@@ -69,7 +69,7 @@ def test_accuracy(model):
 def main():
     model = build_mobilenetV2()  
     model.eval()
-    checkpoint = torch.load("/home/oza/pre-experiment/speeding/test_dist/mobilenet/checkpoint/ckpt.pth", map_location="cpu")['net'] 
+    checkpoint = torch.load("/home/oza/pre-experiment/speeding/speed_check/mobilenet/checkpoint/ckpt.pth", map_location="cpu")['net'] 
     key_list = list(checkpoint.keys())
     print(key_list)
     count = 0
@@ -83,7 +83,8 @@ def main():
             count += 1
             print(name)
             new_list.append(name)
-
+    print(count)
+    quit()
     for name in new_list: #畳み込み層の重みを抽出
         fig = plt.figure()
         checkpoint[name] = torch.flatten(checkpoint[name])

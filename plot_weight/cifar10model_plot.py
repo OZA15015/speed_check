@@ -68,20 +68,28 @@ def main():
     #model = densenet121(pretrained=True, device=device)  
     model.eval()
     key_list = list(checkpoint.keys())
-    print(key_list)
-    
+    print(key_list) 
     count = 0
     new_list = []
     for name in key_list:
         if 'conv' in name and 'weight' in name:
             count += 1
             print(name)
+            print(checkpoint[name].shape)
             new_list.append(name)
         elif 'classifier.1.weight' in name:
             count += 1
             print(name)
+            print(checkpoint[name].shape)
+            new_list.append(name)
+        elif 'features.0.0.weight' in name or 'features.0.1.weight' in name:
+            count += 1
+            print(name)
+            print(checkpoint[name].shape)
             new_list.append(name)
     print(count)
+    #print(model)
+    summary(model, (3, 32, 32))
     quit()
     
     for name in new_list: #畳み込み層の重みを抽出
