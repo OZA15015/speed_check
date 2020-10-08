@@ -68,10 +68,14 @@ def main():
     #model = densenet121(pretrained=True, device=device)  
     model.eval()
     key_list = list(checkpoint.keys())
-    print(key_list) 
+    #print(key_list) 
+    #quit()
     count = 0
     new_list = []
     for name in key_list:
+        print(name)
+        print(checkpoint[name].shape)
+        '''
         if 'conv' in name and 'weight' in name:
             count += 1
             print(name)
@@ -87,7 +91,10 @@ def main():
             print(name)
             print(checkpoint[name].shape)
             new_list.append(name)
-    print(count)
+        '''
+    quit()
+    #print(new_list)
+    #print(count)
     #print(model)
     summary(model, (3, 32, 32))
     quit()

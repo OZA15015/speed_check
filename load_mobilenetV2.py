@@ -10,7 +10,7 @@ import sys
 import time
 import torch.backends.cudnn as cudnn
 
-sys.path.append('/home/oza/pre-experiment/speeding/test_dist/mobilenet')
+sys.path.append('/home/oza/pre-experiment/speeding/speed_check/mobilenet')
 from models import *
 from collections import OrderedDict
 from torchsummary import summary
@@ -64,7 +64,7 @@ def test_accuracy(model):
 
 def main():
     model = build_mobilenetV2()  
-    checkpoint = torch.load("/home/oza/pre-experiment/speeding/test_dist/mobilenet/checkpoint/ckpt.pth", map_location="cpu")['net'] 
+    checkpoint = torch.load("/home/oza/pre-experiment/speeding/speed_check/mobilenet/checkpoint/ckpt.pth", map_location="cpu")['net'] 
     new_state_dict = OrderedDict()
    
     '''
@@ -74,7 +74,29 @@ def main():
             k = k.replace('module.', '')
         new_state_dict[k] = v
     '''
-    
+    key_list = list(checkpoint.keys())
+    print(key_list)
+    count = 0
+    new_list = []
+    for name in key_list:
+        if 'conv' in name and 'weight' in name:
+            count += 1
+            print(name)
+            print(checkpoint[name].shape)
+            new_list.append(name)
+        elif 'module.linear.weight' in name:
+            count += 1
+            print(name)
+            print(checkpoint[name].shape)
+            new_list.append(name)
+        elif 'features.0.0.weight' in name or 'features.0.1.weight' in name:
+            count += 1
+            print(name)
+            print(checkpoint[name].shape)
+            new_list.append(name)
+    print(count)
+    print(new_list)
+    quit()
     #model.load_state_dict(new_state_dict)
     model.load_state_dict(checkpoint)
     #start_time = time.time()
