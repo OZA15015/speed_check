@@ -72,10 +72,19 @@ def main():
     #quit()
     count = 0
     new_list = []
+    
     for name in key_list:
-        print(name)
-        print(checkpoint[name].shape)
-        '''
+        if checkpoint[name].ndim == 4:
+            new_list.append(name)
+            count += 1
+        elif 'classifier.1.weight' in name:
+            new_list.append(name)          
+            count += 1
+    '''
+    for name in key_list:
+        #print(name)
+        #print(checkpoint[name].shape)
+        
         if 'conv' in name and 'weight' in name:
             count += 1
             print(name)
@@ -84,29 +93,35 @@ def main():
         elif 'classifier.1.weight' in name:
             count += 1
             print(name)
-            print(checkpoint[name].shape)
+            print(checkpoint[name].ndim)
             new_list.append(name)
         elif 'features.0.0.weight' in name or 'features.0.1.weight' in name:
             count += 1
             print(name)
             print(checkpoint[name].shape)
             new_list.append(name)
-        '''
-    quit()
-    #print(new_list)
-    #print(count)
+        elif 'features.18.0.weight' in name:
+            count += 1
+            print(name)
+            print(checkpoint[name].shape)
+            new_list.append(name)
+    '''
+
+    print(new_list)
+    print(count)
     #print(model)
     summary(model, (3, 32, 32))
-    quit()
     
     for name in new_list: #畳み込み層の重みを抽出
         fig = plt.figure()
         checkpoint[name] = torch.flatten(checkpoint[name])
         checkpoint[name] = checkpoint[name].to('cpu').detach().numpy().copy()
+        print(checkpoint[name].shape)
+        #quit()
         count = 0 
 
         for i in range(checkpoint[name].shape[0]):
-            if checkpoint[name][i] > -0.05 and checkpoint[name][i] < 0.05:
+            if checkpoint[name][i] > -0.03 and checkpoint[name][i] < 0.03:
                 count += 1
     
         print("weight_percentage: " + str(100*count/checkpoint[name].shape[0]))
@@ -116,8 +131,8 @@ def main():
         plt.hist(checkpoint[name], bins=30)
         print("weight_mean: " + str(np.mean(checkpoint[name])))
         #print(name)
-        fig.savefig("img_mobilenetv2_1/" + name + ".png")
-        plt.close()
+        #fig.savefig("img_mobilenetv2_1/" + name + ".png")
+        #plt.close()
 
 
 if __name__== "__main__":

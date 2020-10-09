@@ -12,8 +12,8 @@ import torch.backends.cudnn as cudnn
 import matplotlib.pyplot as plt
 import statistics
 
-sys.path.append('/home/oza/pre-experiment/speeding/speed_check/mobilenet')
-from models import *
+sys.path.append('/home/oza/pre-experiment/speeding/speed_check')
+from cifar10_models import *  
 from collections import OrderedDict
 from torchsummary import summary
 import scipy.stats as stats
@@ -36,12 +36,7 @@ torch.cuda.manual_seed_all(manual_seed)
 torch.backends.cudnn.benchmark = True
 #device = 'cuda' if torch.cuda.is_available() else 'cpu'
 device = 'cuda'
-def build_mobilenetV2():
-    model = MobileNetV2().to(device)
-    if device == 'cuda':  
-        model = torch.nn.DataParallel(model)
-        cudnn.benchmark = True
-    return model
+
 
 def test_accuracy(model):
     correct = 0
@@ -67,35 +62,37 @@ def test_accuracy(model):
     print("MnobileNetV2_AveTime: " + str(time_sum/i))
 
 def main():
-    model = build_mobilenetV2()  
+    model, checkpoint = mobilenet_v2(pretrained=True, device=device)
     model.eval()
-    checkpoint = torch.load("/home/oza/pre-experiment/speeding/speed_check/mobilenet/checkpoint/ckpt.pth", map_location="cpu")['net'] 
     key_list = list(checkpoint.keys())
-    print(key_list)
     count = 0
     new_list = []
+    
     for name in key_list:
-        if 'conv' in name:
-            count += 1
-            print(name)
+        if checkpoint[name].ndim == 4:
             new_list.append(name)
-        elif 'linear.weight' in name:
             count += 1
-            print(name)
-            new_list.append(name)
+        elif 'classifier.1.weight' in name:
+            new_list.append(name)          
+            count += 1
+
+    print(new_list)
     print(count)
-    quit()
+    summary(model, (3, 32, 32))
+    sum = 0
     for name in new_list: #畳み込み層の重みを抽出
         fig = plt.figure()
         checkpoint[name] = torch.flatten(checkpoint[name])
         checkpoint[name] = checkpoint[name].to('cpu').detach().numpy().copy()
+        #print(checkpoint[name].shape)
         count = 0 
 
         for i in range(checkpoint[name].shape[0]):
-            if checkpoint[name][i] > -0.05 and checkpoint[name][i] < 0.05:
+            if checkpoint[name][i] > -0.01 and checkpoint[name][i] < 0.01:
                 count += 1
     
-        print("weight_percentage: " + str(100*count/checkpoint[name].shape[0]))
+        print(name + "_percentage: " + str(100*count/checkpoint[name].shape[0]))
+        sum += 100*count/checkpoint[name].shape[0]
         plt.title(name, fontsize=10)
         plt.xlabel("Value of Weight", fontsize=8)
         plt.ylabel("Frequency", fontsize=8) 
@@ -104,7 +101,8 @@ def main():
         #print(name)
         fig.savefig("img_mobilenetv2_1/" + name + ".png")
         plt.close()
-
+    
+    print("sum_weight_percentage: " + str(sum / len(new_list)))
 
 if __name__== "__main__":
     main()
