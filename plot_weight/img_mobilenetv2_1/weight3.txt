@@ -1,0 +1,282 @@
+Files already downloaded and verified
+Files already downloaded and verified
+['features.0.0.weight', 'features.1.conv.0.0.weight', 'features.1.conv.1.weight', 'features.2.conv.0.0.weight', 'features.2.conv.1.0.weight', 'features.2.conv.2.weight', 'features.3.conv.0.0.weight', 'features.3.conv.1.0.weight', 'features.3.conv.2.weight', 'features.4.conv.0.0.weight', 'features.4.conv.1.0.weight', 'features.4.conv.2.weight', 'features.5.conv.0.0.weight', 'features.5.conv.1.0.weight', 'features.5.conv.2.weight', 'features.6.conv.0.0.weight', 'features.6.conv.1.0.weight', 'features.6.conv.2.weight', 'features.7.conv.0.0.weight', 'features.7.conv.1.0.weight', 'features.7.conv.2.weight', 'features.8.conv.0.0.weight', 'features.8.conv.1.0.weight', 'features.8.conv.2.weight', 'features.9.conv.0.0.weight', 'features.9.conv.1.0.weight', 'features.9.conv.2.weight', 'features.10.conv.0.0.weight', 'features.10.conv.1.0.weight', 'features.10.conv.2.weight', 'features.11.conv.0.0.weight', 'features.11.conv.1.0.weight', 'features.11.conv.2.weight', 'features.12.conv.0.0.weight', 'features.12.conv.1.0.weight', 'features.12.conv.2.weight', 'features.13.conv.0.0.weight', 'features.13.conv.1.0.weight', 'features.13.conv.2.weight', 'features.14.conv.0.0.weight', 'features.14.conv.1.0.weight', 'features.14.conv.2.weight', 'features.15.conv.0.0.weight', 'features.15.conv.1.0.weight', 'features.15.conv.2.weight', 'features.16.conv.0.0.weight', 'features.16.conv.1.0.weight', 'features.16.conv.2.weight', 'features.17.conv.0.0.weight', 'features.17.conv.1.0.weight', 'features.17.conv.2.weight', 'features.18.0.weight', 'classifier.1.weight']
+53
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 32, 32, 32]             864
+       BatchNorm2d-2           [-1, 32, 32, 32]              64
+             ReLU6-3           [-1, 32, 32, 32]               0
+            Conv2d-4           [-1, 32, 32, 32]             288
+       BatchNorm2d-5           [-1, 32, 32, 32]              64
+             ReLU6-6           [-1, 32, 32, 32]               0
+            Conv2d-7           [-1, 16, 32, 32]             512
+       BatchNorm2d-8           [-1, 16, 32, 32]              32
+  InvertedResidual-9           [-1, 16, 32, 32]               0
+           Conv2d-10           [-1, 96, 32, 32]           1,536
+      BatchNorm2d-11           [-1, 96, 32, 32]             192
+            ReLU6-12           [-1, 96, 32, 32]               0
+           Conv2d-13           [-1, 96, 32, 32]             864
+      BatchNorm2d-14           [-1, 96, 32, 32]             192
+            ReLU6-15           [-1, 96, 32, 32]               0
+           Conv2d-16           [-1, 24, 32, 32]           2,304
+      BatchNorm2d-17           [-1, 24, 32, 32]              48
+ InvertedResidual-18           [-1, 24, 32, 32]               0
+           Conv2d-19          [-1, 144, 32, 32]           3,456
+      BatchNorm2d-20          [-1, 144, 32, 32]             288
+            ReLU6-21          [-1, 144, 32, 32]               0
+           Conv2d-22          [-1, 144, 32, 32]           1,296
+      BatchNorm2d-23          [-1, 144, 32, 32]             288
+            ReLU6-24          [-1, 144, 32, 32]               0
+           Conv2d-25           [-1, 24, 32, 32]           3,456
+      BatchNorm2d-26           [-1, 24, 32, 32]              48
+ InvertedResidual-27           [-1, 24, 32, 32]               0
+           Conv2d-28          [-1, 144, 32, 32]           3,456
+      BatchNorm2d-29          [-1, 144, 32, 32]             288
+            ReLU6-30          [-1, 144, 32, 32]               0
+           Conv2d-31          [-1, 144, 16, 16]           1,296
+      BatchNorm2d-32          [-1, 144, 16, 16]             288
+            ReLU6-33          [-1, 144, 16, 16]               0
+           Conv2d-34           [-1, 32, 16, 16]           4,608
+      BatchNorm2d-35           [-1, 32, 16, 16]              64
+ InvertedResidual-36           [-1, 32, 16, 16]               0
+           Conv2d-37          [-1, 192, 16, 16]           6,144
+      BatchNorm2d-38          [-1, 192, 16, 16]             384
+            ReLU6-39          [-1, 192, 16, 16]               0
+           Conv2d-40          [-1, 192, 16, 16]           1,728
+      BatchNorm2d-41          [-1, 192, 16, 16]             384
+            ReLU6-42          [-1, 192, 16, 16]               0
+           Conv2d-43           [-1, 32, 16, 16]           6,144
+      BatchNorm2d-44           [-1, 32, 16, 16]              64
+ InvertedResidual-45           [-1, 32, 16, 16]               0
+           Conv2d-46          [-1, 192, 16, 16]           6,144
+      BatchNorm2d-47          [-1, 192, 16, 16]             384
+            ReLU6-48          [-1, 192, 16, 16]               0
+           Conv2d-49          [-1, 192, 16, 16]           1,728
+      BatchNorm2d-50          [-1, 192, 16, 16]             384
+            ReLU6-51          [-1, 192, 16, 16]               0
+           Conv2d-52           [-1, 32, 16, 16]           6,144
+      BatchNorm2d-53           [-1, 32, 16, 16]              64
+ InvertedResidual-54           [-1, 32, 16, 16]               0
+           Conv2d-55          [-1, 192, 16, 16]           6,144
+      BatchNorm2d-56          [-1, 192, 16, 16]             384
+            ReLU6-57          [-1, 192, 16, 16]               0
+           Conv2d-58            [-1, 192, 8, 8]           1,728
+      BatchNorm2d-59            [-1, 192, 8, 8]             384
+            ReLU6-60            [-1, 192, 8, 8]               0
+           Conv2d-61             [-1, 64, 8, 8]          12,288
+      BatchNorm2d-62             [-1, 64, 8, 8]             128
+ InvertedResidual-63             [-1, 64, 8, 8]               0
+           Conv2d-64            [-1, 384, 8, 8]          24,576
+      BatchNorm2d-65            [-1, 384, 8, 8]             768
+            ReLU6-66            [-1, 384, 8, 8]               0
+           Conv2d-67            [-1, 384, 8, 8]           3,456
+      BatchNorm2d-68            [-1, 384, 8, 8]             768
+            ReLU6-69            [-1, 384, 8, 8]               0
+           Conv2d-70             [-1, 64, 8, 8]          24,576
+      BatchNorm2d-71             [-1, 64, 8, 8]             128
+ InvertedResidual-72             [-1, 64, 8, 8]               0
+           Conv2d-73            [-1, 384, 8, 8]          24,576
+      BatchNorm2d-74            [-1, 384, 8, 8]             768
+            ReLU6-75            [-1, 384, 8, 8]               0
+           Conv2d-76            [-1, 384, 8, 8]           3,456
+      BatchNorm2d-77            [-1, 384, 8, 8]             768
+            ReLU6-78            [-1, 384, 8, 8]               0
+           Conv2d-79             [-1, 64, 8, 8]          24,576
+      BatchNorm2d-80             [-1, 64, 8, 8]             128
+ InvertedResidual-81             [-1, 64, 8, 8]               0
+           Conv2d-82            [-1, 384, 8, 8]          24,576
+      BatchNorm2d-83            [-1, 384, 8, 8]             768
+            ReLU6-84            [-1, 384, 8, 8]               0
+           Conv2d-85            [-1, 384, 8, 8]           3,456
+      BatchNorm2d-86            [-1, 384, 8, 8]             768
+            ReLU6-87            [-1, 384, 8, 8]               0
+           Conv2d-88             [-1, 64, 8, 8]          24,576
+      BatchNorm2d-89             [-1, 64, 8, 8]             128
+ InvertedResidual-90             [-1, 64, 8, 8]               0
+           Conv2d-91            [-1, 384, 8, 8]          24,576
+      BatchNorm2d-92            [-1, 384, 8, 8]             768
+            ReLU6-93            [-1, 384, 8, 8]               0
+           Conv2d-94            [-1, 384, 8, 8]           3,456
+      BatchNorm2d-95            [-1, 384, 8, 8]             768
+            ReLU6-96            [-1, 384, 8, 8]               0
+           Conv2d-97             [-1, 96, 8, 8]          36,864
+      BatchNorm2d-98             [-1, 96, 8, 8]             192
+ InvertedResidual-99             [-1, 96, 8, 8]               0
+          Conv2d-100            [-1, 576, 8, 8]          55,296
+     BatchNorm2d-101            [-1, 576, 8, 8]           1,152
+           ReLU6-102            [-1, 576, 8, 8]               0
+          Conv2d-103            [-1, 576, 8, 8]           5,184
+     BatchNorm2d-104            [-1, 576, 8, 8]           1,152
+           ReLU6-105            [-1, 576, 8, 8]               0
+          Conv2d-106             [-1, 96, 8, 8]          55,296
+     BatchNorm2d-107             [-1, 96, 8, 8]             192
+InvertedResidual-108             [-1, 96, 8, 8]               0
+          Conv2d-109            [-1, 576, 8, 8]          55,296
+     BatchNorm2d-110            [-1, 576, 8, 8]           1,152
+           ReLU6-111            [-1, 576, 8, 8]               0
+          Conv2d-112            [-1, 576, 8, 8]           5,184
+     BatchNorm2d-113            [-1, 576, 8, 8]           1,152
+           ReLU6-114            [-1, 576, 8, 8]               0
+          Conv2d-115             [-1, 96, 8, 8]          55,296
+     BatchNorm2d-116             [-1, 96, 8, 8]             192
+InvertedResidual-117             [-1, 96, 8, 8]               0
+          Conv2d-118            [-1, 576, 8, 8]          55,296
+     BatchNorm2d-119            [-1, 576, 8, 8]           1,152
+           ReLU6-120            [-1, 576, 8, 8]               0
+          Conv2d-121            [-1, 576, 4, 4]           5,184
+     BatchNorm2d-122            [-1, 576, 4, 4]           1,152
+           ReLU6-123            [-1, 576, 4, 4]               0
+          Conv2d-124            [-1, 160, 4, 4]          92,160
+     BatchNorm2d-125            [-1, 160, 4, 4]             320
+InvertedResidual-126            [-1, 160, 4, 4]               0
+          Conv2d-127            [-1, 960, 4, 4]         153,600
+     BatchNorm2d-128            [-1, 960, 4, 4]           1,920
+           ReLU6-129            [-1, 960, 4, 4]               0
+          Conv2d-130            [-1, 960, 4, 4]           8,640
+     BatchNorm2d-131            [-1, 960, 4, 4]           1,920
+           ReLU6-132            [-1, 960, 4, 4]               0
+          Conv2d-133            [-1, 160, 4, 4]         153,600
+     BatchNorm2d-134            [-1, 160, 4, 4]             320
+InvertedResidual-135            [-1, 160, 4, 4]               0
+          Conv2d-136            [-1, 960, 4, 4]         153,600
+     BatchNorm2d-137            [-1, 960, 4, 4]           1,920
+           ReLU6-138            [-1, 960, 4, 4]               0
+          Conv2d-139            [-1, 960, 4, 4]           8,640
+     BatchNorm2d-140            [-1, 960, 4, 4]           1,920
+           ReLU6-141            [-1, 960, 4, 4]               0
+          Conv2d-142            [-1, 160, 4, 4]         153,600
+     BatchNorm2d-143            [-1, 160, 4, 4]             320
+InvertedResidual-144            [-1, 160, 4, 4]               0
+          Conv2d-145            [-1, 960, 4, 4]         153,600
+     BatchNorm2d-146            [-1, 960, 4, 4]           1,920
+           ReLU6-147            [-1, 960, 4, 4]               0
+          Conv2d-148            [-1, 960, 4, 4]           8,640
+     BatchNorm2d-149            [-1, 960, 4, 4]           1,920
+           ReLU6-150            [-1, 960, 4, 4]               0
+          Conv2d-151            [-1, 320, 4, 4]         307,200
+     BatchNorm2d-152            [-1, 320, 4, 4]             640
+InvertedResidual-153            [-1, 320, 4, 4]               0
+          Conv2d-154           [-1, 1280, 4, 4]         409,600
+     BatchNorm2d-155           [-1, 1280, 4, 4]           2,560
+           ReLU6-156           [-1, 1280, 4, 4]               0
+         Dropout-157                 [-1, 1280]               0
+          Linear-158                   [-1, 10]          12,810
+================================================================
+Total params: 2,236,682
+Trainable params: 2,236,682
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 37.54
+Params size (MB): 8.53
+Estimated Total Size (MB): 46.09
+----------------------------------------------------------------
+features.0.0.weight_percentage: 74.88425925925925
+weight_mean: -0.00033632165
+features.1.conv.0.0.weight_percentage: 66.66666666666667
+weight_mean: -0.0008559333
+features.1.conv.1.weight_percentage: 80.859375
+weight_mean: 0.0017366653
+features.2.conv.0.0.weight_percentage: 90.0390625
+weight_mean: -0.00046118264
+features.2.conv.1.0.weight_percentage: 75.23148148148148
+weight_mean: -0.0007343733
+features.2.conv.2.weight_percentage: 92.70833333333333
+weight_mean: -0.00024137586
+features.3.conv.0.0.weight_percentage: 98.37962962962963
+weight_mean: 0.00032577422
+features.3.conv.1.0.weight_percentage: 88.73456790123457
+weight_mean: -0.00028550794
+features.3.conv.2.weight_percentage: 98.20601851851852
+weight_mean: -0.00013859836
+features.4.conv.0.0.weight_percentage: 93.25810185185185
+weight_mean: -0.00033425933
+features.4.conv.1.0.weight_percentage: 94.05864197530865
+weight_mean: 0.00036216204
+features.4.conv.2.weight_percentage: 95.57291666666667
+weight_mean: 0.00067196105
+features.5.conv.0.0.weight_percentage: 99.072265625
+weight_mean: -0.0002451029
+features.5.conv.1.0.weight_percentage: 89.52546296296296
+weight_mean: -0.0011552538
+features.5.conv.2.weight_percentage: 98.76302083333333
+weight_mean: 0.0007028423
+features.6.conv.0.0.weight_percentage: 99.20247395833333
+weight_mean: 6.3271546e-05
+features.6.conv.1.0.weight_percentage: 93.86574074074075
+weight_mean: -0.00051716075
+features.6.conv.2.weight_percentage: 99.560546875
+weight_mean: 0.00013542874
+features.7.conv.0.0.weight_percentage: 93.18033854166667
+weight_mean: -0.00028933398
+features.7.conv.1.0.weight_percentage: 91.26157407407408
+weight_mean: 0.0035443162
+features.7.conv.2.weight_percentage: 98.20149739583333
+weight_mean: -0.00012879632
+features.8.conv.0.0.weight_percentage: 99.95524088541667
+weight_mean: 7.2264134e-05
+features.8.conv.1.0.weight_percentage: 95.83333333333333
+weight_mean: -0.00029726772
+features.8.conv.2.weight_percentage: 99.93896484375
+weight_mean: -1.912373e-05
+features.9.conv.0.0.weight_percentage: 99.97965494791667
+weight_mean: 7.643669e-05
+features.9.conv.1.0.weight_percentage: 97.82986111111111
+weight_mean: 0.0009259481
+features.9.conv.2.weight_percentage: 99.99186197916667
+weight_mean: 6.1434744e-06
+features.10.conv.0.0.weight_percentage: 99.951171875
+weight_mean: 5.5412194e-05
+features.10.conv.1.0.weight_percentage: 97.65625
+weight_mean: 0.0010812843
+features.10.conv.2.weight_percentage: 99.97151692708333
+weight_mean: -5.6874516e-05
+features.11.conv.0.0.weight_percentage: 98.8037109375
+weight_mean: 4.8204838e-05
+features.11.conv.1.0.weight_percentage: 89.84375
+weight_mean: 0.00044345748
+features.11.conv.2.weight_percentage: 99.951171875
+weight_mean: 3.656217e-05
+features.12.conv.0.0.weight_percentage: 99.99638310185185
+weight_mean: 7.884222e-06
+features.12.conv.1.0.weight_percentage: 99.11265432098766
+weight_mean: 0.0010630834
+features.12.conv.2.weight_percentage: 99.99819155092592
+weight_mean: -1.1997003e-07
+features.13.conv.0.0.weight_percentage: 99.99276620370371
+weight_mean: -2.8954764e-06
+features.13.conv.1.0.weight_percentage: 99.05478395061728
+weight_mean: 0.0010833624
+features.13.conv.2.weight_percentage: 99.99819155092592
+weight_mean: 2.067233e-06
+features.14.conv.0.0.weight_percentage: 99.91500289351852
+weight_mean: -2.8634284e-05
+features.14.conv.1.0.weight_percentage: 99.47916666666667
+weight_mean: 0.0047804504
+features.14.conv.2.weight_percentage: 100.0
+weight_mean: 6.6806965e-06
+features.15.conv.0.0.weight_percentage: 99.99934895833333
+weight_mean: 1.3526413e-07
+features.15.conv.1.0.weight_percentage: 99.44444444444444
+weight_mean: -4.9736354e-05
+features.15.conv.2.weight_percentage: 100.0
+weight_mean: -5.7356915e-06
+features.16.conv.0.0.weight_percentage: 99.99869791666667
+weight_mean: -6.6291473e-06
+features.16.conv.1.0.weight_percentage: 99.67592592592592
+weight_mean: 0.00044523278
+features.16.conv.2.weight_percentage: 99.99609375
+weight_mean: -8.0933563e-07
+features.17.conv.0.0.weight_percentage: 99.99934895833333
+weight_mean: -2.1035408e-05
+features.17.conv.1.0.weight_percentage: 98.64583333333333
+weight_mean: -0.0019895248
+features.17.conv.2.weight_percentage: 100.0
+weight_mean: -1.6418355e-07
+features.18.0.weight_percentage: 100.0
+weight_mean: 1.483364e-06
+classifier.1.weight_percentage: 88.0078125
+weight_mean: 3.0733645e-08
+sum_weight_percentage(-0.03 < weight < 0.03): 95.74062472702656

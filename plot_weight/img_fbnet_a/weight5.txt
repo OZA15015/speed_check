@@ -1,0 +1,345 @@
+Files already downloaded and verified
+Files already downloaded and verified
+[{'stage_idx': 0, 'block_idx': 0, 'block': [1, 16, 1, 1]}, {'stage_idx': 1, 'block_idx': 0, 'block': [3, 24, 1, 2]}, {'stage_idx': 2, 'block_idx': 0, 'block': [1, 24, 1, 1]}, {'stage_idx': 3, 'block_idx': 0, 'block': [1, 24, 1, 1]}, {'stage_idx': 4, 'block_idx': 0, 'block': [1, 24, 1, 1]}, {'stage_idx': 5, 'block_idx': 0, 'block': [6, 32, 1, 2]}, {'stage_idx': 6, 'block_idx': 0, 'block': [3, 32, 1, 1]}, {'stage_idx': 7, 'block_idx': 0, 'block': [1, 32, 1, 1]}, {'stage_idx': 8, 'block_idx': 0, 'block': [3, 32, 1, 1]}, {'stage_idx': 9, 'block_idx': 0, 'block': [6, 64, 1, 2]}, {'stage_idx': 10, 'block_idx': 0, 'block': [3, 64, 1, 1]}, {'stage_idx': 11, 'block_idx': 0, 'block': [1, 64, 1, 1]}, {'stage_idx': 12, 'block_idx': 0, 'block': [6, 64, 1, 1]}, {'stage_idx': 13, 'block_idx': 0, 'block': [6, 112, 1, 1]}, {'stage_idx': 14, 'block_idx': 0, 'block': [1, 112, 1, 1]}, {'stage_idx': 15, 'block_idx': 0, 'block': [3, 112, 1, 1]}, {'stage_idx': 16, 'block_idx': 0, 'block': [1, 112, 1, 1]}, {'stage_idx': 17, 'block_idx': 0, 'block': [6, 184, 1, 2]}, {'stage_idx': 18, 'block_idx': 0, 'block': [6, 184, 1, 1]}, {'stage_idx': 19, 'block_idx': 0, 'block': [3, 184, 1, 1]}, {'stage_idx': 20, 'block_idx': 0, 'block': [6, 184, 1, 1]}, {'stage_idx': 21, 'block_idx': 0, 'block': [6, 352, 1, 1]}]
+[['skip'], ['ir_k3_e3'], ['ir_k3_e1'], ['skip'], ['skip'], ['ir_k5_e6'], ['ir_k3_e3'], ['ir_k5_e1'], ['ir_k3_e3'], ['ir_k5_e6'], ['ir_k5_e3'], ['ir_k5_s2'], ['ir_k5_e6'], ['ir_k3_e6'], ['ir_k5_s2'], ['ir_k5_e1'], ['ir_k3_s2'], ['ir_k5_e6'], ['ir_k5_e6'], ['ir_k5_e3'], ['ir_k5_e6'], ['ir_k5_e6']]
+sum layers: 60
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 16, 32, 32]             432
+       BatchNorm2d-2           [-1, 16, 32, 32]              32
+              ReLU-3           [-1, 16, 32, 32]               0
+          Identity-4           [-1, 16, 32, 32]               0
+            Conv2d-5           [-1, 48, 32, 32]             768
+       BatchNorm2d-6           [-1, 48, 32, 32]              96
+              ReLU-7           [-1, 48, 32, 32]               0
+            Conv2d-8           [-1, 48, 16, 16]             432
+            Conv2d-9           [-1, 24, 16, 16]           1,152
+      BatchNorm2d-10           [-1, 24, 16, 16]              48
+         IRFBlock-11           [-1, 24, 16, 16]               0
+           Conv2d-12           [-1, 24, 16, 16]             576
+      BatchNorm2d-13           [-1, 24, 16, 16]              48
+             ReLU-14           [-1, 24, 16, 16]               0
+           Conv2d-15           [-1, 24, 16, 16]             216
+           Conv2d-16           [-1, 24, 16, 16]             576
+      BatchNorm2d-17           [-1, 24, 16, 16]              48
+         IRFBlock-18           [-1, 24, 16, 16]               0
+         Identity-19           [-1, 24, 16, 16]               0
+         Identity-20           [-1, 24, 16, 16]               0
+           Conv2d-21          [-1, 144, 16, 16]           3,456
+      BatchNorm2d-22          [-1, 144, 16, 16]             288
+             ReLU-23          [-1, 144, 16, 16]               0
+           Conv2d-24            [-1, 144, 8, 8]           3,600
+           Conv2d-25             [-1, 32, 8, 8]           4,608
+      BatchNorm2d-26             [-1, 32, 8, 8]              64
+         IRFBlock-27             [-1, 32, 8, 8]               0
+           Conv2d-28             [-1, 96, 8, 8]           3,072
+      BatchNorm2d-29             [-1, 96, 8, 8]             192
+             ReLU-30             [-1, 96, 8, 8]               0
+           Conv2d-31             [-1, 96, 8, 8]             864
+           Conv2d-32             [-1, 32, 8, 8]           3,072
+      BatchNorm2d-33             [-1, 32, 8, 8]              64
+         IRFBlock-34             [-1, 32, 8, 8]               0
+           Conv2d-35             [-1, 32, 8, 8]           1,024
+      BatchNorm2d-36             [-1, 32, 8, 8]              64
+             ReLU-37             [-1, 32, 8, 8]               0
+           Conv2d-38             [-1, 32, 8, 8]             800
+           Conv2d-39             [-1, 32, 8, 8]           1,024
+      BatchNorm2d-40             [-1, 32, 8, 8]              64
+         IRFBlock-41             [-1, 32, 8, 8]               0
+           Conv2d-42             [-1, 96, 8, 8]           3,072
+      BatchNorm2d-43             [-1, 96, 8, 8]             192
+             ReLU-44             [-1, 96, 8, 8]               0
+           Conv2d-45             [-1, 96, 8, 8]             864
+           Conv2d-46             [-1, 32, 8, 8]           3,072
+      BatchNorm2d-47             [-1, 32, 8, 8]              64
+         IRFBlock-48             [-1, 32, 8, 8]               0
+           Conv2d-49            [-1, 192, 8, 8]           6,144
+      BatchNorm2d-50            [-1, 192, 8, 8]             384
+             ReLU-51            [-1, 192, 8, 8]               0
+           Conv2d-52            [-1, 192, 4, 4]           4,800
+           Conv2d-53             [-1, 64, 4, 4]          12,288
+      BatchNorm2d-54             [-1, 64, 4, 4]             128
+         IRFBlock-55             [-1, 64, 4, 4]               0
+           Conv2d-56            [-1, 192, 4, 4]          12,288
+      BatchNorm2d-57            [-1, 192, 4, 4]             384
+             ReLU-58            [-1, 192, 4, 4]               0
+           Conv2d-59            [-1, 192, 4, 4]           4,800
+           Conv2d-60             [-1, 64, 4, 4]          12,288
+      BatchNorm2d-61             [-1, 64, 4, 4]             128
+         IRFBlock-62             [-1, 64, 4, 4]               0
+           Conv2d-63             [-1, 64, 4, 4]           2,048
+      BatchNorm2d-64             [-1, 64, 4, 4]             128
+             ReLU-65             [-1, 64, 4, 4]               0
+   ChannelShuffle-66             [-1, 64, 4, 4]               0
+           Conv2d-67             [-1, 64, 4, 4]           1,600
+           Conv2d-68             [-1, 64, 4, 4]           2,048
+      BatchNorm2d-69             [-1, 64, 4, 4]             128
+         IRFBlock-70             [-1, 64, 4, 4]               0
+           Conv2d-71            [-1, 384, 4, 4]          24,576
+      BatchNorm2d-72            [-1, 384, 4, 4]             768
+             ReLU-73            [-1, 384, 4, 4]               0
+           Conv2d-74            [-1, 384, 4, 4]           9,600
+           Conv2d-75             [-1, 64, 4, 4]          24,576
+      BatchNorm2d-76             [-1, 64, 4, 4]             128
+         IRFBlock-77             [-1, 64, 4, 4]               0
+           Conv2d-78            [-1, 384, 4, 4]          24,576
+      BatchNorm2d-79            [-1, 384, 4, 4]             768
+             ReLU-80            [-1, 384, 4, 4]               0
+           Conv2d-81            [-1, 384, 4, 4]           3,456
+           Conv2d-82            [-1, 112, 4, 4]          43,008
+      BatchNorm2d-83            [-1, 112, 4, 4]             224
+         IRFBlock-84            [-1, 112, 4, 4]               0
+           Conv2d-85            [-1, 112, 4, 4]           6,272
+      BatchNorm2d-86            [-1, 112, 4, 4]             224
+             ReLU-87            [-1, 112, 4, 4]               0
+   ChannelShuffle-88            [-1, 112, 4, 4]               0
+           Conv2d-89            [-1, 112, 4, 4]           2,800
+           Conv2d-90            [-1, 112, 4, 4]           6,272
+      BatchNorm2d-91            [-1, 112, 4, 4]             224
+         IRFBlock-92            [-1, 112, 4, 4]               0
+           Conv2d-93            [-1, 112, 4, 4]          12,544
+      BatchNorm2d-94            [-1, 112, 4, 4]             224
+             ReLU-95            [-1, 112, 4, 4]               0
+           Conv2d-96            [-1, 112, 4, 4]           2,800
+           Conv2d-97            [-1, 112, 4, 4]          12,544
+      BatchNorm2d-98            [-1, 112, 4, 4]             224
+         IRFBlock-99            [-1, 112, 4, 4]               0
+          Conv2d-100            [-1, 112, 4, 4]           6,272
+     BatchNorm2d-101            [-1, 112, 4, 4]             224
+            ReLU-102            [-1, 112, 4, 4]               0
+  ChannelShuffle-103            [-1, 112, 4, 4]               0
+          Conv2d-104            [-1, 112, 4, 4]           1,008
+          Conv2d-105            [-1, 112, 4, 4]           6,272
+     BatchNorm2d-106            [-1, 112, 4, 4]             224
+        IRFBlock-107            [-1, 112, 4, 4]               0
+          Conv2d-108            [-1, 672, 4, 4]          75,264
+     BatchNorm2d-109            [-1, 672, 4, 4]           1,344
+            ReLU-110            [-1, 672, 4, 4]               0
+          Conv2d-111            [-1, 672, 2, 2]          16,800
+          Conv2d-112            [-1, 184, 2, 2]         123,648
+     BatchNorm2d-113            [-1, 184, 2, 2]             368
+        IRFBlock-114            [-1, 184, 2, 2]               0
+          Conv2d-115           [-1, 1104, 2, 2]         203,136
+     BatchNorm2d-116           [-1, 1104, 2, 2]           2,208
+            ReLU-117           [-1, 1104, 2, 2]               0
+          Conv2d-118           [-1, 1104, 2, 2]          27,600
+          Conv2d-119            [-1, 184, 2, 2]         203,136
+     BatchNorm2d-120            [-1, 184, 2, 2]             368
+        IRFBlock-121            [-1, 184, 2, 2]               0
+          Conv2d-122            [-1, 552, 2, 2]         101,568
+     BatchNorm2d-123            [-1, 552, 2, 2]           1,104
+            ReLU-124            [-1, 552, 2, 2]               0
+          Conv2d-125            [-1, 552, 2, 2]          13,800
+          Conv2d-126            [-1, 184, 2, 2]         101,568
+     BatchNorm2d-127            [-1, 184, 2, 2]             368
+        IRFBlock-128            [-1, 184, 2, 2]               0
+          Conv2d-129           [-1, 1104, 2, 2]         203,136
+     BatchNorm2d-130           [-1, 1104, 2, 2]           2,208
+            ReLU-131           [-1, 1104, 2, 2]               0
+          Conv2d-132           [-1, 1104, 2, 2]          27,600
+          Conv2d-133            [-1, 184, 2, 2]         203,136
+     BatchNorm2d-134            [-1, 184, 2, 2]             368
+        IRFBlock-135            [-1, 184, 2, 2]               0
+          Conv2d-136           [-1, 1104, 2, 2]         203,136
+     BatchNorm2d-137           [-1, 1104, 2, 2]           2,208
+            ReLU-138           [-1, 1104, 2, 2]               0
+          Conv2d-139           [-1, 1104, 2, 2]          27,600
+          Conv2d-140            [-1, 352, 2, 2]         388,608
+     BatchNorm2d-141            [-1, 352, 2, 2]             704
+        IRFBlock-142            [-1, 352, 2, 2]               0
+          Conv2d-143           [-1, 1504, 1, 1]       2,119,136
+         Dropout-144           [-1, 1504, 1, 1]               0
+         Flatten-145                 [-1, 1504]               0
+          Linear-146                   [-1, 10]          15,050
+================================================================
+Total params: 4,348,506
+Trainable params: 4,348,506
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 5.95
+Params size (MB): 16.59
+Estimated Total Size (MB): 22.55
+----------------------------------------------------------------
+(432,)
+module.first.conv.weight_percentage: 7.407407407407407
+weight_mean: 0.0024294648
+(768,)
+module.stages.xif1_0.pw.conv.weight_percentage: 21.484375
+weight_mean: -0.033560414
+(432,)
+module.stages.xif1_0.dw.conv.weight_percentage: 10.648148148148149
+weight_mean: 0.017868467
+(1152,)
+module.stages.xif1_0.pwl.conv.weight_percentage: 15.625
+weight_mean: -0.0035106884
+(576,)
+module.stages.xif2_0.pw.conv.weight_percentage: 18.40277777777778
+weight_mean: 0.0020810002
+(216,)
+module.stages.xif2_0.dw.conv.weight_percentage: 11.574074074074074
+weight_mean: -0.010730966
+(576,)
+module.stages.xif2_0.pwl.conv.weight_percentage: 18.92361111111111
+weight_mean: -0.016711563
+(3456,)
+module.stages.xif5_0.pw.conv.weight_percentage: 24.71064814814815
+weight_mean: 0.0054742196
+(3600,)
+module.stages.xif5_0.dw.conv.weight_percentage: 30.75
+weight_mean: 0.001537102
+(4608,)
+module.stages.xif5_0.pwl.conv.weight_percentage: 29.774305555555557
+weight_mean: -0.0028911335
+(3072,)
+module.stages.xif6_0.pw.conv.weight_percentage: 28.3203125
+weight_mean: 0.00032550129
+(864,)
+module.stages.xif6_0.dw.conv.weight_percentage: 16.89814814814815
+weight_mean: 0.0031481523
+(3072,)
+module.stages.xif6_0.pwl.conv.weight_percentage: 28.385416666666668
+weight_mean: -0.0007638175
+(1024,)
+module.stages.xif7_0.pw.conv.weight_percentage: 29.4921875
+weight_mean: -0.0074329316
+(800,)
+module.stages.xif7_0.dw.conv.weight_percentage: 25.5
+weight_mean: 0.015174146
+(1024,)
+module.stages.xif7_0.pwl.conv.weight_percentage: 27.05078125
+weight_mean: -0.0032910137
+(3072,)
+module.stages.xif8_0.pw.conv.weight_percentage: 27.571614583333332
+weight_mean: 0.0021648698
+(864,)
+module.stages.xif8_0.dw.conv.weight_percentage: 16.89814814814815
+weight_mean: -0.005876541
+(3072,)
+module.stages.xif8_0.pwl.conv.weight_percentage: 30.696614583333332
+weight_mean: 0.0021289547
+(6144,)
+module.stages.xif9_0.pw.conv.weight_percentage: 23.714192708333332
+weight_mean: -0.0009292656
+(4800,)
+module.stages.xif9_0.dw.conv.weight_percentage: 26.791666666666668
+weight_mean: 0.0026977204
+(12288,)
+module.stages.xif9_0.pwl.conv.weight_percentage: 31.103515625
+weight_mean: 0.0010739991
+(12288,)
+module.stages.xif10_0.pw.conv.weight_percentage: 41.145833333333336
+weight_mean: 0.0005173767
+(4800,)
+module.stages.xif10_0.dw.conv.weight_percentage: 29.520833333333332
+weight_mean: -0.0022421747
+(12288,)
+module.stages.xif10_0.pwl.conv.weight_percentage: 42.447916666666664
+weight_mean: -0.00097425695
+(2048,)
+module.stages.xif11_0.pw.conv.weight_percentage: 29.931640625
+weight_mean: 0.0003422643
+(1600,)
+module.stages.xif11_0.dw.conv.weight_percentage: 29.5625
+weight_mean: -0.002854695
+(2048,)
+module.stages.xif11_0.pwl.conv.weight_percentage: 31.103515625
+weight_mean: 0.003527095
+(24576,)
+module.stages.xif12_0.pw.conv.weight_percentage: 44.132486979166664
+weight_mean: 3.3049884e-05
+(9600,)
+module.stages.xif12_0.dw.conv.weight_percentage: 33.333333333333336
+weight_mean: 6.321862e-05
+(24576,)
+module.stages.xif12_0.pwl.conv.weight_percentage: 51.167805989583336
+weight_mean: -0.0002341423
+(24576,)
+module.stages.xif13_0.pw.conv.weight_percentage: 33.797200520833336
+weight_mean: -0.00092359603
+(3456,)
+module.stages.xif13_0.dw.conv.weight_percentage: 16.89814814814815
+weight_mean: -0.0029389819
+(43008,)
+module.stages.xif13_0.pwl.conv.weight_percentage: 48.086402529761905
+weight_mean: -0.00046920165
+(6272,)
+module.stages.xif14_0.pw.conv.weight_percentage: 36.527423469387756
+weight_mean: -0.00011737785
+(2800,)
+module.stages.xif14_0.dw.conv.weight_percentage: 30.142857142857142
+weight_mean: -0.00052769337
+(6272,)
+module.stages.xif14_0.pwl.conv.weight_percentage: 39.60459183673469
+weight_mean: -0.0017585352
+(12544,)
+module.stages.xif15_0.pw.conv.weight_percentage: 50.09566326530612
+weight_mean: -0.00023906176
+(2800,)
+module.stages.xif15_0.dw.conv.weight_percentage: 29.821428571428573
+weight_mean: 0.00012596637
+(12544,)
+module.stages.xif15_0.pwl.conv.weight_percentage: 53.435905612244895
+weight_mean: -0.0008603697
+(6272,)
+module.stages.xif16_0.pw.conv.weight_percentage: 42.15561224489796
+weight_mean: -0.001435544
+(1008,)
+module.stages.xif16_0.dw.conv.weight_percentage: 19.444444444444443
+weight_mean: 0.0028366353
+(6272,)
+module.stages.xif16_0.pwl.conv.weight_percentage: 44.339923469387756
+weight_mean: -0.00018766685
+(75264,)
+module.stages.xif17_0.pw.conv.weight_percentage: 54.58253613945578
+weight_mean: -0.00042470102
+(16800,)
+module.stages.xif17_0.dw.conv.weight_percentage: 35.642857142857146
+weight_mean: -0.0012077611
+(123648,)
+module.stages.xif17_0.pwl.conv.weight_percentage: 77.25964026915113
+weight_mean: 5.5768756e-05
+(203136,)
+module.stages.xif18_0.pw.conv.weight_percentage: 89.02508664146188
+weight_mean: -2.3129001e-05
+(27600,)
+module.stages.xif18_0.dw.conv.weight_percentage: 41.333333333333336
+weight_mean: -0.0004768841
+(203136,)
+module.stages.xif18_0.pwl.conv.weight_percentage: 97.59225346565847
+weight_mean: -6.3774096e-05
+(101568,)
+module.stages.xif19_0.pw.conv.weight_percentage: 88.30537177063643
+weight_mean: -0.00031778426
+(13800,)
+module.stages.xif19_0.dw.conv.weight_percentage: 40.64492753623188
+weight_mean: 0.0015682725
+(101568,)
+module.stages.xif19_0.pwl.conv.weight_percentage: 96.41028670447385
+weight_mean: -9.344406e-06
+(203136,)
+module.stages.xif20_0.pw.conv.weight_percentage: 95.73241572148709
+weight_mean: -2.724035e-05
+(27600,)
+module.stages.xif20_0.dw.conv.weight_percentage: 42.01086956521739
+weight_mean: -2.8847231e-05
+(203136,)
+module.stages.xif20_0.pwl.conv.weight_percentage: 99.71989209199748
+weight_mean: -5.519705e-05
+(203136,)
+module.stages.xif21_0.pw.conv.weight_percentage: 87.36659183994959
+weight_mean: -0.00012463029
+(27600,)
+module.stages.xif21_0.dw.conv.weight_percentage: 41.17391304347826
+weight_mean: 0.0006466547
+(388608,)
+module.stages.xif21_0.pwl.conv.weight_percentage: 99.71282114624506
+weight_mean: -3.779985e-05
+(2117632,)
+module.last_stages.conv_k1.weight_percentage: 100.0
+weight_mean: 8.080438e-06
+(15040,)
+module.last_stages.fc.weight_percentage: 66.31648936170212
+weight_mean: -2.5301538e-06
+sum_weight_percentage(-0.05 < weight < 0.05): 42.18746164193398
