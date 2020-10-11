@@ -34,16 +34,17 @@ torch.backends.cudnn.benchmark = True
 device = "cuda"
 
 def fbneta_cifar():
-    model = fbnet_builder.get_model('fbnet_a', cnt_classes=10).to(device)
+    model = fbnet_builder.get_model('first_test', cnt_classes=10).to(device)
     return model
 
 
 def main():
     model = fbneta_cifar()
-    checkpoint = torch.load("/home/oza/pre-experiment/speeding/FBNet_load/architecture_functions/logs/saitest_FBA/best_model.pth", map_location=device)
-    #checkpoint = torch.load("/home/oza/pre-experiment/speeding/FBNet_load/architecture_functions/logs/first_test/best_model.pth", map_location=device) 
+    #checkpoint = torch.load("/home/oza/pre-experiment/speeding/FBNet_load/architecture_functions/logs/saitest_FBA/best_model.pth", map_location=device)
+    checkpoint = torch.load("/home/oza/pre-experiment/speeding/FBNet_load/architecture_functions/logs/first_test/best_model.pth", map_location=device) 
     #checkpoint = torch.load("/home/oza/pre-experiment/speeding/FBNet_load/architecture_functions/logs/second_test/best_model.pth", map_location=device) 
     #checkpoint = torch.load("/home/oza/pre-experiment/speeding/FBNet_load/architecture_functions/logs/third_test/best_model.pth", map_location=device) 
+    #checkpoint = torch.load("/home/oza/pre-experiment/speeding/FBNet_load/architecture_functions/logs/fbnet_c/best_model.pth", map_location=device) 
     new_state_dict = OrderedDict()
     
     for k, v in checkpoint.items():
@@ -59,19 +60,20 @@ def main():
     new_list = []
     count = 0
     for name in key_list:
+        #print(checkpoint[name].shape)
+    
         if checkpoint[name].ndim == 4:
             new_list.append(name)
             count += 1
-            #print(checkpoint[name].shape)
+            print(checkpoint[name].shape)
         elif 'module.last_stages.fc.weight' in name:
             new_list.append(name)
             count += 1
-            #print(checkpoint[name].shape)
-
+            print(checkpoint[name].shape)
     print("sum layers: " + str(count))
-    #print(new_list)
-    
+    #print(new_list) 
     summary(model, (3, 32, 32))
+    #quit()
     sum = 0
     for name in new_list: #畳み込み層の重みを抽出
         fig = plt.figure()
@@ -92,7 +94,7 @@ def main():
         plt.hist(checkpoint[name], bins=30)
         print("weight_mean: " + str(np.mean(checkpoint[name])))
         #print(name)
-        #fig.savefig("img_fbnet_a/" + name + ".png")
+        #fig.savefig("first_test/" + name + ".png")
         plt.close()
 
     print("sum_weight_percentage(-0.05 < weight < 0.05): " + str(sum / len(new_list)))
