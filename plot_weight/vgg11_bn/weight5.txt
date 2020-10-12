@@ -1,0 +1,77 @@
+Files already downloaded and verified
+Files already downloaded and verified
+['features.0.weight', 'features.4.weight', 'features.8.weight', 'features.11.weight', 'features.15.weight', 'features.18.weight', 'features.22.weight', 'features.25.weight', 'classifier.0.weight', 'classifier.3.weight', 'classifier.6.weight']
+11
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 32, 32]           1,792
+       BatchNorm2d-2           [-1, 64, 32, 32]             128
+              ReLU-3           [-1, 64, 32, 32]               0
+         MaxPool2d-4           [-1, 64, 16, 16]               0
+            Conv2d-5          [-1, 128, 16, 16]          73,856
+       BatchNorm2d-6          [-1, 128, 16, 16]             256
+              ReLU-7          [-1, 128, 16, 16]               0
+         MaxPool2d-8            [-1, 128, 8, 8]               0
+            Conv2d-9            [-1, 256, 8, 8]         295,168
+      BatchNorm2d-10            [-1, 256, 8, 8]             512
+             ReLU-11            [-1, 256, 8, 8]               0
+           Conv2d-12            [-1, 256, 8, 8]         590,080
+      BatchNorm2d-13            [-1, 256, 8, 8]             512
+             ReLU-14            [-1, 256, 8, 8]               0
+        MaxPool2d-15            [-1, 256, 4, 4]               0
+           Conv2d-16            [-1, 512, 4, 4]       1,180,160
+      BatchNorm2d-17            [-1, 512, 4, 4]           1,024
+             ReLU-18            [-1, 512, 4, 4]               0
+           Conv2d-19            [-1, 512, 4, 4]       2,359,808
+      BatchNorm2d-20            [-1, 512, 4, 4]           1,024
+             ReLU-21            [-1, 512, 4, 4]               0
+        MaxPool2d-22            [-1, 512, 2, 2]               0
+           Conv2d-23            [-1, 512, 2, 2]       2,359,808
+      BatchNorm2d-24            [-1, 512, 2, 2]           1,024
+             ReLU-25            [-1, 512, 2, 2]               0
+           Conv2d-26            [-1, 512, 2, 2]       2,359,808
+      BatchNorm2d-27            [-1, 512, 2, 2]           1,024
+             ReLU-28            [-1, 512, 2, 2]               0
+        MaxPool2d-29            [-1, 512, 1, 1]               0
+AdaptiveAvgPool2d-30            [-1, 512, 7, 7]               0
+           Linear-31                 [-1, 4096]     102,764,544
+             ReLU-32                 [-1, 4096]               0
+          Dropout-33                 [-1, 4096]               0
+           Linear-34                 [-1, 4096]      16,781,312
+             ReLU-35                 [-1, 4096]               0
+          Dropout-36                 [-1, 4096]               0
+           Linear-37                   [-1, 10]          40,970
+================================================================
+Total params: 128,812,810
+Trainable params: 128,812,810
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 4.09
+Params size (MB): 491.38
+Estimated Total Size (MB): 495.48
+----------------------------------------------------------------
+features.0.weight_percentage: 83.39120370370371
+weight_mean: -0.00035899386
+features.4.weight_percentage: 99.96609157986111
+weight_mean: -0.0009402263
+features.8.weight_percentage: 100.0
+weight_mean: -0.00048787426
+features.11.weight_percentage: 100.0
+weight_mean: -0.00052484847
+features.15.weight_percentage: 100.0
+weight_mean: -0.00017280444
+features.18.weight_percentage: 100.0
+weight_mean: -0.00014288648
+features.22.weight_percentage: 100.0
+weight_mean: -0.0001824122
+features.25.weight_percentage: 100.0
+weight_mean: -1.20498025e-05
+classifier.0.weight_percentage: 100.0
+weight_mean: 6.140388e-05
+classifier.3.weight_percentage: 100.0
+weight_mean: 0.00012617667
+classifier.6.weight_percentage: 99.990234375
+weight_mean: 4.5460182e-09
+sum_weight_percentage(-0.05 < weight < 0.05): 98.48613905986953

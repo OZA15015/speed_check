@@ -62,7 +62,8 @@ def test_accuracy(model):
     print("MnobileNetV2_AveTime: " + str(time_sum/i))
 
 def main():
-    model, checkpoint = mobilenet_v2(pretrained=True, device=device)
+    #model, checkpoint = mobilenet_v2(pretrained=True, device=device)
+    model, checkpoint = vgg11_bn(pretrained=True, device=device)
     model.eval()
     key_list = list(checkpoint.keys())
     count = 0
@@ -72,12 +73,14 @@ def main():
         if checkpoint[name].ndim == 4:
             new_list.append(name)
             count += 1
-        elif 'classifier.1.weight' in name:
+        #elif 'classifier.1.weight' in name: #mobilenetV2
+        elif 'classifier' in name and 'weight' in name:
             new_list.append(name)          
             count += 1
 
     print(new_list)
     print(count)
+    
     summary(model, (3, 32, 32))
     sum = 0
     for name in new_list: #畳み込み層の重みを抽出
@@ -99,10 +102,10 @@ def main():
         plt.hist(checkpoint[name], bins=30)
         print("weight_mean: " + str(np.mean(checkpoint[name])))
         #print(name)
-        fig.savefig("img_mobilenetv2_1/" + name + ".png")
+        #fig.savefig("vgg11_bn/" + name + ".png")
         plt.close()
     
-    print("sum_weight_percentage: " + str(sum / len(new_list)))
+    print("sum_weight_percentage(-0.01 < weight < 0.01): " + str(sum / len(new_list)))
 
 if __name__== "__main__":
     main()
